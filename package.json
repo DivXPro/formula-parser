@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "@handsontable/formulajs": "^2.0.1",
+    "formulajs-precision": "^2.0.2",
     "number-precision": "^1.3.2",
     "tiny-emitter": "^2.0.1"
   },
