@@ -1,7 +1,7 @@
 {
-  "name": "hot-formula-parser",
+  "name": "precisely-formula-parser",
   "version": "3.0.1",
-  "description": "Formula parser",
+  "description": "Number precisely Formula parser",
   "browser": "dist/formula-parser.js",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/handsontable/formula-parser.git"
+    "url": "https://github.com/divxpro/formula-parser.git"
   },
   "keywords": [
     "formula",
@@ -36,9 +36,9 @@
   "author": "Handsoncode <hello@handsontable.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/handsontable/formula-parser/issues"
+    "url": "https://github.com/divxpro/formula-parser/issues"
   },
-  "homepage": "https://github.com/handsontable/formula-parser",
+  "homepage": "https://github.com/divxpro/formula-parser",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "@handsontable/formulajs": "^2.0.1",
+    "number-precision": "^1.3.2",
     "tiny-emitter": "^2.0.1"
   },
   "jest": {
