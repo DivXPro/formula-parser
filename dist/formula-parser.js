@@ -12265,15 +12265,9 @@ exports.__esModule = true;
 exports.SYMBOL = undefined;
 exports['default'] = func;
 
-var _numberPrecision = __webpack_require__(4);
-
-var _numberPrecision2 = _interopRequireDefault(_numberPrecision);
-
 var _number = __webpack_require__(3);
 
 var _error = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var SYMBOL = exports.SYMBOL = '/';
 
@@ -12282,10 +12276,10 @@ function func(first) {
     rest[_key - 1] = arguments[_key];
   }
 
-  // const result = rest.reduce((acc, value) => acc / toNumber(value), toNumber(first));
   var result = rest.reduce(function (acc, value) {
-    return _numberPrecision2['default'].divide(acc, (0, _number.toNumber)(value));
+    return acc / (0, _number.toNumber)(value);
   }, (0, _number.toNumber)(first));
+  // const result = rest.reduce((acc, value) => NP.divide(acc, toNumber(value)), toNumber(first));
 
   if (result === Infinity) {
     throw Error(_error.ERROR_DIV_ZERO);
