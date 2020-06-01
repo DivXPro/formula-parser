@@ -2235,7 +2235,7 @@ exports.CORREL = function(array1, array2) {
 };
 
 exports.COUNT = function() {
-  return utils.numbers(utils.flatten(arguments)).length;
+  return utils.flatten(arguments).length;
 };
 
 exports.COUNTA = function() {
