@@ -145,10 +145,15 @@ exports.flatten = function() {
 
 exports.argsToArray = function(args) {
   var result = [];
-
-  exports.arrayEach(args, function(value) {
-    result.push(value);
-  });
+  if (args.length === 1 && Array.isArray(args[0])) {
+    exports.arrayEach(args[0], function(value) {
+      result.push(value);
+    });
+  } else {
+    exports.arrayEach(args, function(value) {
+      result.push(value);
+    });
+  }
 
   return result;
 };
@@ -5702,21 +5707,35 @@ jStat.diff = function diff(arr) {
 
 // ranks of an array
 jStat.rank = function (arr) {
-  var arrlen = arr.length;
-  var sorted = arr.slice().sort(ascNum);
-  var ranks = new Array(arrlen);
-  var val;
-  for (var i = 0; i < arrlen; i++) {
-    var first = sorted.indexOf(arr[i]);
-    var last = sorted.lastIndexOf(arr[i]);
-    if (first === last) {
-      val = first;
+  var i;
+  var distinctNumbers = [];
+  var numberCounts = {};
+  for (i = 0; i < arr.length; i++) {
+    var number = arr[i];
+    if (numberCounts[number]) {
+      numberCounts[number]++;
     } else {
-      val = (first + last) / 2;
+      numberCounts[number] = 1;
+      distinctNumbers.push(number);
     }
-    ranks[i] = val + 1;
   }
-  return ranks;
+
+  var sortedDistinctNumbers = distinctNumbers.sort(ascNum);
+  var numberRanks = {};
+  var currentRank = 1;
+  for (i = 0; i < sortedDistinctNumbers.length; i++) {
+    var number = sortedDistinctNumbers[i];
+    var count = numberCounts[number];
+    var first = currentRank;
+    var last = currentRank + count - 1;
+    var rank = (first + last) / 2;
+    numberRanks[number] = rank;
+    currentRank += count;
+  }
+
+  return arr.map(function (number) {
+    return numberRanks[number];
+  });
 };
 
 
@@ -6173,6 +6192,9 @@ jStat.gammafn = function gammafn(x) {
   var xnum = 0;
   var y = x;
   var i, z, yi, res;
+  if (x > 171.6243769536076) {
+    return Infinity;
+  }
   if (y <= 0) {
     res = y % 1 + 3.6e-16;
     if (res) {
@@ -12407,7 +12429,6 @@ for (var c in categories) {
   }
 }
 
-console.log('categories', categories[4]['SUM'](1000.11, 2000,02, 3000));
 
 /***/ }),
 /* 26 */
