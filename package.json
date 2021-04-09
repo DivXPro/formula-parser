@@ -1,5 +1,5 @@
 {
-  "name": "precisely-formula-parser",
+  "name": "@toy-box/hot-formula-parser",
   "version": "4.0.0",
   "description": "Formula parser",
   "main": "./index",
