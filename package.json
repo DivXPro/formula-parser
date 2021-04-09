@@ -43,9 +43,9 @@
   "author": "Handsoncode <hello@handsontable.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/handsontable/formula-parser/issues"
+    "url": "https://github.com/DivXPro/formula-parser/issues"
   },
-  "homepage": "https://github.com/handsontable/formula-parser",
+  "homepage": "https://github.com/DivXPro/formula-parser",
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
