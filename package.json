@@ -1,5 +1,5 @@
 {
-  "name": "hot-formula-parser",
+  "name": "precisely-formula-parser",
   "version": "4.0.0",
   "description": "Formula parser",
   "main": "./index",
@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "@handsontable/formulajs": "^2.0.2",
+    "mathjs": "^9.3.0",
     "tiny-emitter": "^2.1.0"
   },
   "jest": {
