@@ -1,4 +1,4 @@
-import { multiply } from 'mathjs';
+import { accMul as multiply } from './acc-math';
 import {toNumber} from './../../helper/number';
 import {ERROR_VALUE} from './../../error';
 

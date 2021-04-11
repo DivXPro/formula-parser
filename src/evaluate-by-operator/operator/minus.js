@@ -1,4 +1,4 @@
-import { minus } from 'mathjs';
+import { accSub as minus } from './acc-math';
 import {toNumber} from './../../helper/number';
 import {ERROR_VALUE} from './../../error';
 

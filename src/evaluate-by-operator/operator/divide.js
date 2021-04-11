@@ -1,4 +1,4 @@
-import { divide } from 'mathjs';
+import { accDiv as divide } from './acc-math';
 import {toNumber} from './../../helper/number';
 import {ERROR_DIV_ZERO, ERROR_VALUE} from './../../error';
 
